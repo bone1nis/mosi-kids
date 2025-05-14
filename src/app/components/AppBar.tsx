@@ -15,6 +15,7 @@ import AppLogo from '../../shared/assets/icons/AppLogo';
 import { Link, useNavigate } from 'react-router';
 
 const pages = [
+    { name: 'Главная страница', path: '/' },
     { name: 'Рецепты', path: '/recipes' },
     { name: 'Челленджи', path: '/challenges' },
     { name: 'Рейтинг', path: '/rating' },

@@ -22,10 +22,10 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => (
                 {users.map((user) => (
                     <TableRow key={user.id}>
                         <TableCell>{user.username}</TableCell>
-                        <TableCell>{user.level}</TableCell>
+                        <TableCell>{user.lvl}</TableCell>
                         <TableCell>{user.experience} XP</TableCell>
-                        <TableCell>{user.dishesCount}</TableCell>
-                        <TableCell>{user.challengesCount}</TableCell>
+                        <TableCell>{user.dishes}</TableCell>
+                        <TableCell>{user.challenges}</TableCell>
                         <TableCell>{user.achievements.join(", ")}</TableCell>
                     </TableRow>
                 ))}

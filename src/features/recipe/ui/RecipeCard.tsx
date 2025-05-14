@@ -6,9 +6,10 @@ import recipeIcon from "../assets/recipe-icon.svg";
 
 interface RecipeCardProps {
     recipe: Recipe;
+    minWidth?: string | number;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
+const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, minWidth = 280 }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -17,7 +18,12 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
 
     return (
         <Card
-            sx={{ minWidth: 280, maxWidth: 600, padding: 3, cursor: "pointer" }}
+            sx={{
+                minWidth: minWidth,
+                maxWidth: 600,
+                padding: 3,
+                cursor: "pointer"
+            }}
             onClick={handleClick}
         >
             <Stack direction="row" justifyContent={"space-between"} alignItems={"center"}>

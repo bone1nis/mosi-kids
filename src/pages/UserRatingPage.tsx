@@ -2,8 +2,26 @@ import { Container, Typography, useMediaQuery, useTheme, Stack } from "@mui/mate
 import { useUserSorting, UserSortControls, UserTable, UserCard, type User } from "../entities/user";
 
 const mockUsers: User[] = [
-    { id: 1, email: "user1@example.com", username: "User1", level: 5, experience: 300, dishesCount: 10, challengesCount: 4, achievements: ["Поваренок", "Гуру кухни"] },
-    { id: 2, email: "user2@example.com", username: "User2", level: 39, experience: 200, dishesCount: 5, challengesCount: 3, achievements: ["Начинающий повар"] }
+    {
+        id: "ываыва",
+        email: "user1@example.com",
+        username: "User1",
+        lvl: 5,
+        experience: 300,
+        dishes: [2, 3],
+        challenges: [4, 5],
+        achievements: [1, 2]
+    },
+    {
+        id: "ыва",
+        email: "user2@example.com",
+        username: "User2",
+        lvl: 39,
+        experience: 200,
+        dishes: [2, 3],
+        challenges: [2, 3],
+        achievements: [1, 2]
+    }
 ];
 
 const UserRatingPage: React.FC = () => {

@@ -1,10 +1,10 @@
 export interface User {
-    id: number;
+    id: string;
     email: string;
     username: string;
-    level: number;
+    lvl: number;
     experience: number;
-    dishesCount: number;
-    challengesCount: number;
-    achievements: string[];
+    dishes: number[];
+    challenges: number[];
+    achievements: number[];
 }
