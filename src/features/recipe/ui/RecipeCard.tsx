@@ -60,8 +60,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                 alignItems={"center"}
             >
                 <Stack spacing={3}>
-                    <Stack direction={"row"} spacing={2} alignItems={"center"}>
-                        <Typography fontWeight={900} mb={4}>
+                    <Stack direction={"row"} spacing={1} alignItems={"center"}>
+                        <Typography fontWeight={900} mb={4} variant="h5">
                             {recipe.title}
                         </Typography>
                         <Alert

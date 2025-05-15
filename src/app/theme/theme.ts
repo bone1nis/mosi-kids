@@ -2,6 +2,10 @@ import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
     palette: {
+        text: {
+            primary: "#000",
+            secondary: "#fff"
+        },
         primary: {
             main: "#C6EE66"
         },
@@ -60,7 +64,9 @@ export const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#000",
+                    backgroundColor: "#ff9500",
+                    padding: "30px",
+                    borderRadius: "16px",
                     color: "#fff",
                     "&:disabled": {
                         backgroundColor: "#f5f5f5",
@@ -77,6 +83,7 @@ export const theme = createTheme({
                 },
                 text: {
                     backgroundColor: "transparent",
+                    borderRadius: "8px",
                     color: "#000",
                     "&:hover": {
                         backgroundColor: "rgba(255, 207, 105, 0.1)",
@@ -144,9 +151,30 @@ export const theme = createTheme({
                     color: "#000",
                 },
                 message: {
-                    color: "#000",
+                    color: "#fff",
                 }
             }
-        }
+        },
+        MuiTable: {
+            styleOverrides: {
+                root: {
+                    background: "#3193FF",
+                    borderCollapse: "separate",
+                },
+            },
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    color: "#fff",
+                },
+                head: {
+                    color: "#fff",
+                },
+                body: {
+                    color: "#fff",
+                },
+            },
+        },
     },
 });

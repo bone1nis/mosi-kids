@@ -60,7 +60,7 @@ export const useRecipeStore = create<{ recipes: Recipe[]; setRecipes: (recipes: 
         },
         {
             id: 5,
-            title: "Чизкейк классический",
+            title: "Чизкейк",
             description: "Нежный чизкейк с кремовым вкусом",
             lvl: 3,
             experience: 120,

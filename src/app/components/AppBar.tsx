@@ -13,11 +13,12 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AppLogo from '../../shared/assets/icons/AppLogo';
 import { Link, useNavigate } from 'react-router';
+import { Stack } from '@mui/material';
 
 const pages = [
     { name: 'Главная страница', path: '/' },
     { name: 'Рецепты', path: '/recipes' },
-    { name: 'Челленджи', path: '/challenges' },
+    { name: 'Челленджи', path: '/challenge' },
     { name: 'Рейтинг', path: '/rating' },
     { name: 'Авторизация', path: '/login' },
 ];
@@ -54,7 +55,7 @@ const AppBar = () => {
     };
 
     return (
-        <MuiAppBar position="static">
+        <MuiAppBar position="static" sx={{maxHeight: "6vh"}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AppLogo width={40} height={40} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -68,7 +69,7 @@ const AppBar = () => {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontWeight: 900,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -131,14 +132,14 @@ const AppBar = () => {
                     >
                         MosiKid’s
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Stack direction={"row"} justifyContent={"flex-end"} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button key={page.name} onClick={() => handleNavigation(page.path)} sx={{ color: '#000' }}>
+                            <Button key={page.name} onClick={() => handleNavigation(page.path)} sx={{ color: '#000', p: 2, fontWeight: 900 }}>
                                 {page.name}
                             </Button>
                         ))}
-                    </Box>
-                    <Box sx={{ flexGrow: 0 }}>
+                    </Stack>
+                    <Box ml={10} sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="remi" />

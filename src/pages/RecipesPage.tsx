@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import RecipeCard from "../features/recipe/ui/RecipeCard";
 import { useRecipeStore } from "../shared/store/recipeStore";
 import { useAuthStore } from "../shared/store/authStore";
@@ -15,9 +15,6 @@ const RecipesPage: React.FC = () => {
 
     return (
         <Container>
-            <Typography variant="h3" sx={{ mb: 3 }} align="center">
-                Рецепты
-            </Typography>
             <Grid container spacing={4}>
                 {sortedRecipes.map((recipe) => (
                     <Grid size={{ xs: 12, sm: 6 }} key={recipe.id}>

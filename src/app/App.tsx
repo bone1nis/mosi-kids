@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <AppBar />
-      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "92vh", width: "100%" }}>
+      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "94vh", width: "100%" }}>
         <Routes>
           <Route index element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/recipes" element={<RecipesPage />} />
           <Route path="/recipes/:id" element={<RecipePage />} />
-          <Route path="/challenges" element={<ChallengesPage />} />
+          <Route path="/challenge" element={<ChallengesPage />} />
           <Route path="/rating" element={<UserRatingPage />} />
         </Routes>
       </Stack>
