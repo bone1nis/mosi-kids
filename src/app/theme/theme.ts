@@ -107,20 +107,44 @@ export const theme = createTheme({
         },
         MuiAlert: {
             styleOverrides: {
-                standardSuccess: {
-                    backgroundColor: "#34c759",
+                standardError: {
+                    backgroundColor: "#ff3b30",
                     color: "#fff",
                 },
-                filledSuccess: {
-                    backgroundColor: "#34c759",
+                filledError: {
+                    backgroundColor: "#ff3b30",
                     color: "#fff",
                 },
-                outlinedSuccess: {
-                    color: "#fff",
-                    borderColor: "#34c759",
+                outlinedError: {
+                    borderColor: "#ff3b30",
+                    color: "#ff3b30",
+                },
+                standardWarning: {
+                    backgroundColor: "#ffcf69",
+                    color: "#000",
+                },
+                filledWarning: {
+                    backgroundColor: "#ff3b30",
+                    color: "#000",
+                },
+                outlinedWarning: {
+                    borderColor: "#ffcf69",
+                    color: "#000",
+                },
+                standardInfo: {
+                    backgroundColor: "#69bff8",
+                    color: "#000",
+                },
+                filledInfo: {
+                    backgroundColor: "#69bff8",
+                    color: "#000",
+                },
+                outlinedInfo: {
+                    borderColor: "#69bff8",
+                    color: "#000",
                 },
                 message: {
-                    color: "#fff"
+                    color: "#000",
                 }
             }
         }
