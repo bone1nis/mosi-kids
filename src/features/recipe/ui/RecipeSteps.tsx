@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Stack } from "@mui/material";
 import type { Recipe } from "../../../entities/recipe";
+import { useAuthStore } from "../../../shared/store/authStore";
 
 interface RecipeStepsProps {
     steps: Recipe["steps"];
@@ -8,9 +9,17 @@ interface RecipeStepsProps {
     onNext: () => void;
     onBack: () => void;
     onSubmit: () => void;
+    recipeId: number;
 }
 
-const RecipeSteps: React.FC<RecipeStepsProps> = ({ steps, activeStep, onNext, onBack, onSubmit }) => {
+const RecipeSteps: React.FC<RecipeStepsProps> = ({ steps, activeStep, onNext, onBack, onSubmit, recipeId }) => {
+    const addDish = useAuthStore((state) => state.addDish);
+
+    const handleComplete = () => {
+        addDish(recipeId);
+        onSubmit();
+    };
+
     const isLastStep = activeStep === steps.length + 1;
     const isIngredientStep = activeStep === 0;
 
@@ -19,7 +28,9 @@ const RecipeSteps: React.FC<RecipeStepsProps> = ({ steps, activeStep, onNext, on
             <Box>
                 <Typography variant="h5">Готово!</Typography>
                 <Typography mb={2}>Ваше блюдо готово к подаче!</Typography>
-                <Button variant="contained" onClick={onSubmit}>Вернуться к рецептам</Button>
+                <Stack sx={{ mt: 2 }} direction={"row"} justifyContent={"center"}>
+                    <Button variant="contained" onClick={handleComplete}>Вернуться к рецептам</Button>
+                </Stack>
             </Box>
         );
     }
@@ -35,12 +46,12 @@ const RecipeSteps: React.FC<RecipeStepsProps> = ({ steps, activeStep, onNext, on
                 <>
                     <Typography variant="h5">Шаг {activeStep}:</Typography>
                     <Typography>{steps[activeStep - 1]}</Typography>
-                    <Box sx={{ mt: 2 }}>
+                    <Stack sx={{ mt: 2 }} direction={"row"} justifyContent={"center"}>
                         <Button variant="outlined" onClick={onBack} sx={{ mr: 2 }}>Назад</Button>
                         <Button variant="contained" onClick={onNext}>
                             {activeStep === steps.length ? "Готово" : "Далее"}
                         </Button>
-                    </Box>
+                    </Stack>
                 </>
             )}
         </Box>

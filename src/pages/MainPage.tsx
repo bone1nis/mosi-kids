@@ -60,7 +60,7 @@ const MainPage: React.FC = () => {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 width: "100%",
-                height: { xs: "300px", sm: "625px" }
+                height: { xs: "500px", sm: "625px" }
             }}>
                 <Typography color="text.secondary" variant="h1" fontWeight={900} sx={{ pt: 15, textAlign: "center" }}>
                     MosiKid’s

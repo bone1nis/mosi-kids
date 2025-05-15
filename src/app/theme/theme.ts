@@ -112,6 +112,13 @@ export const theme = createTheme({
                 },
             },
         },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    borderRadius: "32px",
+                },
+            },
+        },
         MuiAlert: {
             styleOverrides: {
                 standardError: {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Typography, Stepper, Step, StepLabel, Box, Button, useMediaQuery, useTheme } from "@mui/material";
+import { Container, Typography, Stepper, Step, StepLabel, Box, Button, useMediaQuery, useTheme, Stack } from "@mui/material";
 import { useNavigate, useParams } from "react-router";
 import { IngredientList, RecipeSteps } from "../features/recipe";
 import { useRecipeStore } from "../shared/store/recipeStore";
@@ -62,12 +62,13 @@ const RecipePage: React.FC = () => {
             {activeStep === 0 ? (
                 <Box>
                     <IngredientList ingredients={recipe.ingredients} />
-                    <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+                    <Stack direction={"row"} justifyContent={"center"} mt={4}>
                         <Button variant="contained" onClick={handleNext}>Начать готовить</Button>
-                    </Box>
+                    </Stack>
                 </Box>
             ) : (
                 <RecipeSteps
+                    recipeId={recipe.id}
                     steps={recipe.steps}
                     onNext={handleNext}
                     onBack={handleBack}

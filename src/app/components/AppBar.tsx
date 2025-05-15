@@ -132,7 +132,7 @@ const AppBar = () => {
                     >
                         MosiKid’s
                     </Typography>
-                    <Stack direction={"row"} justifyContent={"flex-end"} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Stack direction={"row"} justifyContent={"center"} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button key={page.name} onClick={() => handleNavigation(page.path)} sx={{ color: '#000', p: 2, fontWeight: 900 }}>
                                 {page.name}

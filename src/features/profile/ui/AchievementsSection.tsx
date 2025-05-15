@@ -12,11 +12,11 @@ const AchievementsSection: React.FC<AchievementsSectionProps> = ({ achievementsI
     const userAchievements = achievements.filter((ach) => achievementsIds.includes(ach.id));
 
     return (
-        <Stack alignItems="center">
-            <Typography variant="h5" sx={{ mb: 3 }} fontWeight="bold">
-                Достижения
+        <Stack>
+            <Typography textAlign={{ xs: "center", sm: "left" }} variant="h4" sx={{ mb: 2 }} fontWeight="bold">
+                Достижения:
             </Typography>
-            <Stack direction="row" spacing={3}>
+            <Stack alignItems={"center"} direction={{ xs: "column", sm: "row" }} spacing={2}>
                 {userAchievements.length > 0 ? (
                     userAchievements.map((ach) => <AchievementCard key={ach.id} achievement={ach} />)
                 ) : (

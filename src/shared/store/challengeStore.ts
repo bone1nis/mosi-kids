@@ -5,18 +5,6 @@ export const useChallengeStore = create<{ challenges: Challenge[]; setChallenges
     challenges: [
         {
             id: 1,
-            title: "Первый вызов",
-            experience: 50,
-            steps: [
-                "Подготовьте необходимые ингредиенты",
-                "Выполните первый шаг",
-                "Завершите задание"
-            ],
-            ingredients: ["Ингредиент 1", "Ингредиент 2"],
-            description: "Выполните первый вызов, чтобы получить опыт"
-        },
-        {
-            id: 2,
             title: "Готовим омлет",
             experience: 70,
             steps: [
@@ -28,7 +16,7 @@ export const useChallengeStore = create<{ challenges: Challenge[]; setChallenges
             description: "Приготовьте вкусный омлет"
         },
         {
-            id: 3,
+            id: 2,
             title: "Приготовление салата Цезарь",
             experience: 90,
             steps: [
