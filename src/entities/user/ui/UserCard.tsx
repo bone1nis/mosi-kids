@@ -10,11 +10,21 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => (
         <CardContent>
             <Typography variant="h6">{user.username}</Typography>
             <Divider sx={{ my: 1 }} />
-            <Typography><strong>Уровень:</strong> {user.level}</Typography>
-            <Typography><strong>Опыт:</strong> {user.experience} XP</Typography>
-            <Typography><strong>Блюда:</strong> {user.dishesCount}</Typography>
-            <Typography><strong>Челленджи:</strong> {user.challengesCount}</Typography>
-            <Typography><strong>Достижения:</strong> {user.achievements.join(", ")}</Typography>
+            <Typography>
+                <Typography component="span" fontWeight={700}>Уровень:</Typography> {user.lvl}
+            </Typography>
+            <Typography>
+                <Typography component="span" fontWeight={700}>Опыт:</Typography> {user.experience} XP
+            </Typography>
+            <Typography>
+                <Typography component="span" fontWeight={700}>Блюда:</Typography> {user.dishes}
+            </Typography>
+            <Typography>
+                <Typography component="span" fontWeight={700}>Челленджи:</Typography> {user.challenges.length}
+            </Typography>
+            <Typography>
+                <Typography component="span" fontWeight={700}>Достижения:</Typography> {user.achievements.join(", ")}
+            </Typography>
         </CardContent>
     </Card>
 );

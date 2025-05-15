@@ -7,10 +7,26 @@ export const theme = createTheme({
         },
         secondary: {
             main: "#FFCF69"
+        },
+        success: {
+            main: "#34c759"
+        },
+        warning: {
+            main: "#ff3b30"
         }
     },
     typography: {
         fontFamily: "'Inter', sans-serif",
+        h1: {
+            fontWeight: 900,
+            fontSize: '3rem',
+            '@media (min-width:600px)': {
+                fontSize: '4.5rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '6rem',
+            },
+        },
     },
     components: {
         MuiTextField: {
@@ -44,7 +60,8 @@ export const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#FFCF69",
+                    backgroundColor: "#000",
+                    color: "#fff",
                     "&:disabled": {
                         backgroundColor: "#f5f5f5",
                         color: "#9e9e9e"
@@ -52,15 +69,15 @@ export const theme = createTheme({
                 },
                 outlined: {
                     backgroundColor: "transparent",
-                    color: "#FFCF69",
-                    borderColor: "#FFCF69",
+                    color: "#000",
+                    borderColor: "#000",
                     "&:hover": {
                         backgroundColor: "rgba(255, 207, 105, 0.1)",
                     },
                 },
                 text: {
                     backgroundColor: "transparent",
-                    color: "#FFCF69",
+                    color: "#000",
                     "&:hover": {
                         backgroundColor: "rgba(255, 207, 105, 0.1)",
                     },
@@ -88,5 +105,24 @@ export const theme = createTheme({
                 },
             },
         },
+        MuiAlert: {
+            styleOverrides: {
+                standardSuccess: {
+                    backgroundColor: "#34c759",
+                    color: "#fff",
+                },
+                filledSuccess: {
+                    backgroundColor: "#34c759",
+                    color: "#fff",
+                },
+                outlinedSuccess: {
+                    color: "#fff",
+                    borderColor: "#34c759",
+                },
+                message: {
+                    color: "#fff"
+                }
+            }
+        }
     },
 });

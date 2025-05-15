@@ -63,6 +63,7 @@ const AppBar = () => {
                         noWrap
                         component={Link}
                         to="/"
+                        fontWeight={900}
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -73,7 +74,7 @@ const AppBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        MosiKids
+                        MosiKid’s
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,6 +117,7 @@ const AppBar = () => {
                         noWrap
                         component={Link}
                         to={"/"}
+                        fontWeight={900}
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -127,11 +129,11 @@ const AppBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        MosiKids
+                        MosiKid’s
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button key={page.name} onClick={() => handleNavigation(page.path)} sx={{ color: 'white' }}>
+                            <Button key={page.name} onClick={() => handleNavigation(page.path)} sx={{ color: '#000' }}>
                                 {page.name}
                             </Button>
                         ))}

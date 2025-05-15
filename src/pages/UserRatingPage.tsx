@@ -1,31 +1,10 @@
 import { Container, Typography, useMediaQuery, useTheme, Stack } from "@mui/material";
-import { useUserSorting, UserSortControls, UserTable, UserCard, type User } from "../entities/user";
-
-const mockUsers: User[] = [
-    {
-        id: "ываыва",
-        email: "user1@example.com",
-        username: "User1",
-        lvl: 5,
-        experience: 300,
-        dishes: [2, 3],
-        challenges: [4, 5],
-        achievements: [1, 2]
-    },
-    {
-        id: "ыва",
-        email: "user2@example.com",
-        username: "User2",
-        lvl: 39,
-        experience: 200,
-        dishes: [2, 3],
-        challenges: [2, 3],
-        achievements: [1, 2]
-    }
-];
+import { useUserSorting, UserSortControls, UserTable, UserCard} from "../entities/user";
+import { useUsersStore } from "../shared/store/usersStore";
 
 const UserRatingPage: React.FC = () => {
-    const { sortedUsers, sortBy, setSortBy } = useUserSorting(mockUsers);
+    const users = useUsersStore(state => state.users);
+    const { sortedUsers, sortBy, setSortBy } = useUserSorting(users);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 

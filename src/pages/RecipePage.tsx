@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Typography, Stepper, Step, StepLabel, Box, Button, useMediaQuery, useTheme } from "@mui/material";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { IngredientList, RecipeSteps } from "../features/recipe";
-import type { Recipe } from "../entities/recipe";
-
-const mockRecipe: Recipe = {
-    id: 1,
-    title: "Омлет",
-    level: 2,
-    experience: 30,
-    ingredients: ["Яйца", "Соль", "Молоко"],
-    steps: [
-        "Подготовьте ингредиенты",
-        "Смешайте яйца с молоком и солью",
-        "Обжарьте смесь на сковороде"
-    ]
-};
+import { useRecipeStore } from "../shared/store/recipeStore";
 
 const RecipePage: React.FC = () => {
+    const { id } = useParams<{ id: string }>();
+    const recipeId = Number(id);
+
+    const recipe = useRecipeStore(state => state.recipes.find(r => r.id === recipeId));
 
     const navigate = useNavigate();
 
@@ -25,6 +16,25 @@ const RecipePage: React.FC = () => {
     const isBigScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
     const [activeStep, setActiveStep] = useState(0);
+
+    useEffect(() => {
+        setActiveStep(0);
+    }, [recipeId]);
+
+    if (!recipe) {
+        return (
+            <Container>
+                <Typography variant="h5" align="center" sx={{ mt: 4 }}>
+                    Рецепт не найден
+                </Typography>
+                <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+                    <Button variant="contained" onClick={() => navigate("/recipes")}>
+                        Вернуться к рецептам
+                    </Button>
+                </Box>
+            </Container>
+        );
+    }
 
     const handleNext = () => {
         setActiveStep((prevStep) => prevStep + 1);
@@ -40,10 +50,10 @@ const RecipePage: React.FC = () => {
 
     return (
         <Container>
-            <Typography variant="h3" sx={{ mb: 3 }} align="center">{mockRecipe.title}</Typography>
+            <Typography variant="h3" sx={{ mb: 3 }} align="center">{recipe.title}</Typography>
             <Stepper activeStep={activeStep} sx={{ mb: 4 }} orientation={isBigScreen ? "horizontal" : "vertical"}>
                 <Step><StepLabel>Состав ингредиентов</StepLabel></Step>
-                {mockRecipe.steps.map((_, index) => (
+                {recipe.steps.map((_, index) => (
                     <Step key={index}><StepLabel>Шаг {index + 1}</StepLabel></Step>
                 ))}
                 <Step><StepLabel>Готово</StepLabel></Step>
@@ -51,14 +61,14 @@ const RecipePage: React.FC = () => {
 
             {activeStep === 0 ? (
                 <Box>
-                    <IngredientList ingredients={mockRecipe.ingredients} />
+                    <IngredientList ingredients={recipe.ingredients} />
                     <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
                         <Button variant="contained" onClick={handleNext}>Начать готовить</Button>
                     </Box>
                 </Box>
             ) : (
                 <RecipeSteps
-                    steps={mockRecipe.steps}
+                    steps={recipe.steps}
                     onNext={handleNext}
                     onBack={handleBack}
                     activeStep={activeStep}

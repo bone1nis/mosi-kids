@@ -2,15 +2,15 @@ import { Stack, Button } from "@mui/material";
 
 interface UserSortControlsProps {
     sortBy: string;
-    setSortBy: (sort: "level" | "dishesCount" | "achievements") => void;
+    setSortBy: (sort: "lvl" | "dishes" | "achievements") => void;
 }
 
 const UserSortControls: React.FC<UserSortControlsProps> = ({ sortBy, setSortBy }) => (
     <Stack direction="row" justifyContent="center" spacing={2} sx={{ mb: 2 }}>
-        <Button variant={sortBy === "level" ? "contained" : "outlined"} onClick={() => setSortBy("level")}>
+        <Button variant={sortBy === "lvl" ? "contained" : "outlined"} onClick={() => setSortBy("lvl")}>
             По уровню
         </Button>
-        <Button variant={sortBy === "dishesCount" ? "contained" : "outlined"} onClick={() => setSortBy("dishesCount")}>
+        <Button variant={sortBy === "dishes" ? "contained" : "outlined"} onClick={() => setSortBy("dishes")}>
             По количеству блюд
         </Button>
         <Button variant={sortBy === "achievements" ? "contained" : "outlined"} onClick={() => setSortBy("achievements")}>
