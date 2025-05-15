@@ -6,7 +6,7 @@ export const useAuthStore = create<{
     setUser: (user: User) => void;
 }>((set) => ({
     user: {
-        id: "1",
+        id: "cfd3136a-0cd4-4d75-8361-049ba5a543e4",
         email: "oleg@example.com",
         username: "Олег",
         lvl: 5,
