@@ -24,7 +24,7 @@ const pages = [
 ];
 const settings = [
     { name: 'Профиль', path: '/profile' },
-    { name: 'Выйти', path: '/logout' },
+    { name: 'Выйти', path: '/' },
 ];
 
 const AppBar = () => {
