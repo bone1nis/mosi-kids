@@ -5,7 +5,7 @@ import { MainPage, LoginPage, RegistrationPage, ProfilePage, RecipesPage, Recipe
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter>
       <AppBar />
       <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "92vh", width: "100%" }}>
         <Routes>
