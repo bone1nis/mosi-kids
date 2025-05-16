@@ -74,7 +74,7 @@ const MainPage: React.FC = () => {
             </Stack>
             <Container>
                 <Stack my={2}>
-                    <Stack onClick={() => navigate("/challenge")} p={5} direction={{ xs: "column", sm: "row" }} alignItems={"center"} justifyContent={"space-between"} sx={{
+                    <Stack onClick={() => navigate("/challenges")} p={5} direction={{ xs: "column", sm: "row" }} alignItems={"center"} justifyContent={"space-between"} sx={{
                         backgroundImage: `url(${backgroundGradient})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
