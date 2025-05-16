@@ -5,7 +5,7 @@ const ProfileChart: React.FC = () => {
     return (
         <Stack>
             <Typography textAlign={{ xs: "center", sm: "left" }} variant="h4" sx={{ mb: 2 }} fontWeight="bold">
-                Достижения:
+                Статистика:
             </Typography>
             <Box component={"img"} src={profileChart} />
         </Stack>
