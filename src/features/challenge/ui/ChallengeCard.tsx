@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Alert, Box, Card, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router";
-import type { Recipe } from "../../../entities/recipe";
-import recipeIcon from "../assets/recipe-icon.svg";
+import challengeIcon from "../assets/challenge-icon.svg";
+import type { Challenge } from "../../../entities/challenge";
 
-interface RecipeCardProps {
-    recipe: Recipe;
+interface ChallengeCardProps {
+    challenge: Challenge;
     minWidth?: string | number;
     disabled?: boolean;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({
-    recipe,
+const ChallengeCard: React.FC<ChallengeCardProps> = ({
+    challenge,
     minWidth = 280,
     disabled = false,
 }) => {
@@ -22,7 +22,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
         if (disabled) return;
         setIsPressed(true);
         setTimeout(() => {
-            navigate(`/recipes/${recipe.id}`);
+            navigate(`/challenges/${challenge.id}`);
             setIsPressed(false);
         }, 150);
     };
@@ -61,7 +61,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                 <Stack spacing={3}>
                     <Stack direction={"row"} spacing={1} alignItems={"center"}>
                         <Typography fontWeight={900} mb={4} variant="h5">
-                            {recipe.title}
+                            {challenge.title}
                         </Typography>
                         <Alert
                             icon={false}
@@ -87,12 +87,12 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                         </Alert>
                     </Stack>
                     <Stack>
-                        <Typography>{recipe.description}</Typography>
+                        <Typography>{challenge.description}</Typography>
                     </Stack>
                 </Stack>
                 <Box
                     component="img"
-                    src={recipeIcon}
+                    src={challengeIcon}
                     alt="Иконка рецепта"
                     sx={{
                         height: "100%",
@@ -104,4 +104,4 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
     );
 };
 
-export default RecipeCard;
+export default ChallengeCard;

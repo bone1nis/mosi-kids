@@ -1,13 +1,13 @@
 import { Stack } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { AppBar } from "./components";
-import { MainPage, LoginPage, RegistrationPage, ProfilePage, RecipesPage, RecipePage, ChallengesPage, UserRatingPage } from "../pages";
+import { MainPage, LoginPage, RegistrationPage, ProfilePage, RecipesPage, RecipePage, ChallengesPage, UserRatingPage, ChallengePage } from "../pages";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <AppBar />
-      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "94vh", width: "100%" }}>
+      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "92vh", width: "100%" }}>
         <Routes>
           <Route index element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -15,7 +15,8 @@ const App: React.FC = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/recipes" element={<RecipesPage />} />
           <Route path="/recipes/:id" element={<RecipePage />} />
-          <Route path="/challenge" element={<ChallengesPage />} />
+          <Route path="/challenges" element={<ChallengesPage />} />
+          <Route path="/challenges/:id" element={<ChallengePage />} />
           <Route path="/rating" element={<UserRatingPage />} />
         </Routes>
       </Stack>

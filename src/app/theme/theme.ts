@@ -68,9 +68,12 @@ export const theme = createTheme({
                     padding: "30px",
                     borderRadius: "16px",
                     color: "#fff",
+                    transition: "opacity 0.3s",
                     "&:disabled": {
-                        backgroundColor: "#f5f5f5",
-                        color: "#9e9e9e"
+                        opacity: 0.5,
+                        backgroundColor: "#ff9500",
+                        color: "#fff",
+                        pointerEvents: "none",
                     },
                 },
                 outlined: {

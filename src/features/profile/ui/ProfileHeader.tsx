@@ -10,7 +10,7 @@ interface ProfileHeaderProps {
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({ user }) => {
 
     return (
-        <Stack direction={{ xs: "column", md: "row" }} justifyContent="space-between" alignItems="center" spacing={2}>
+        <Stack direction={{ xs: "column", lg: "row" }} justifyContent="space-between" alignItems="center" spacing={2}>
             <ProfileCard username={user.username} lvl={user.lvl} experience={user.experience} />
             <Stack spacing={1} direction={{ xs: "column", md: "row" }}>
                 <StatisticCard title="8 часов" subtitle="Проведено в игре" />

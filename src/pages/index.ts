@@ -5,4 +5,5 @@ export { default as ProfilePage } from './ProfilePage';
 export { default as RecipesPage } from './RecipesPage';
 export { default as RecipePage } from './RecipePage';
 export { default as ChallengesPage } from './ChallengesPage';
+export { default as ChallengePage } from './ChallengePage';
 export { default as UserRatingPage } from './UserRatingPage';

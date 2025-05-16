@@ -18,7 +18,7 @@ import { Stack } from '@mui/material';
 const pages = [
     { name: 'Главная страница', path: '/' },
     { name: 'Рецепты', path: '/recipes' },
-    { name: 'Челленджи', path: '/challenge' },
+    { name: 'Челленджи', path: '/challenges' },
     { name: 'Рейтинг', path: '/rating' },
     { name: 'Авторизация', path: '/login' },
 ];
@@ -66,7 +66,7 @@ const AppBar = () => {
                         to="/"
                         fontWeight={900}
                         sx={{
-                            mr: 2,
+                            mr: {xs: 0, sm: 2},
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 900,
@@ -120,7 +120,7 @@ const AppBar = () => {
                         to={"/"}
                         fontWeight={900}
                         sx={{
-                            mr: 2,
+                            mr: {xs: 0, sm: 2},
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',

@@ -11,8 +11,8 @@ const ProfileCard: React.FC<UserCardProps> = ({ username, lvl, experience }) => 
     return (
         <Card sx={{
             p: 1,
-            width: { xs: 390, sm: 390 },
-            minWidth: 390,
+            width: { xs: 300, sm: 390 },
+            minWidth: 300,
         }}>
             <Stack
                 alignItems={"center"}
