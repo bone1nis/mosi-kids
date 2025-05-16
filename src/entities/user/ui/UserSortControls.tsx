@@ -6,7 +6,7 @@ interface UserSortControlsProps {
 }
 
 const UserSortControls: React.FC<UserSortControlsProps> = ({ sortBy, setSortBy }) => (
-    <Stack direction="row" justifyContent="center" spacing={2} sx={{ mb: 2 }}>
+    <Stack direction="row" justifyContent="center" mt={{ xs: 5, sm: 0 }} mb={2} spacing={2}>
         <Button variant={sortBy === "lvl" ? "contained" : "outlined"} onClick={() => setSortBy("lvl")}>
             По уровню
         </Button>
