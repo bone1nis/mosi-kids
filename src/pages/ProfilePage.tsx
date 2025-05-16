@@ -7,8 +7,8 @@ const ProfilePage: React.FC = () => {
     const user = useAuthStore((state) => state.user!);
 
     return (
-        <Container maxWidth="lg" sx={{ paddingY: 4 }}>
-            <Stack spacing={3} mt={11}>
+        <Container maxWidth="lg">
+            <Stack spacing={3}  mt={{ sm: 5, md: 11 }}>
                 <ProfileHeader user={user} />
                 <AchievementsSection achievementsIds={user.achievements} />
                 <ProfileChart />

@@ -15,7 +15,7 @@ const RecipesPage: React.FC = () => {
 
     return (
         <Container>
-            <Grid container spacing={4} mt={{ xs: 5, sm: 0 }}>
+            <Grid container spacing={4} mt={{ sm: 5, md: 0 }}>
                 {sortedRecipes.map((recipe) => (
                     <Grid size={{ xs: 12, sm: 6 }} key={recipe.id}>
                         <RecipeCard

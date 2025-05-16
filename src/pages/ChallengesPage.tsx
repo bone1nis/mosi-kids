@@ -28,7 +28,7 @@ const ChallengesPage: React.FC = () => {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 width: "100%",
-                height: {xs: "94vh", sm: "90vh"},
+                height: "calc(100vh - 64px)",
             }}
         >
             <Typography variant="h1" fontWeight={900} mb={6} color="text.secondary">

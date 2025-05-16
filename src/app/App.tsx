@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <AppBar />
-      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight: "90vh", width: "100%" }}>
+      <Stack justifyContent={"center"} alignItems={"center"} sx={{ minHeight:"calc(100vh - 64px)", width: "100%" }}>
         <Routes>
           <Route index element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
